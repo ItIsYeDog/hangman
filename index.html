@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/word-list.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<div id="name-modal" class="name-modal">
+    <div class="content">
+        <h4 id="name-title">Vennligst skriv inn navnet ditt</h4>
+        <input type="text" id="player-name" name="player-name">
+        <button id="save-name">Lagre navn</button>
+    </div>
+</div>
+
+<div class="game-modal">
+    <div class="content">
+        <img src="#" alt="gif">
+        <h4>Spill over!</h4>
+        <p>Riktig ord var: <b>rainbow</b></p>
+        <button class="play-again">Spill igjen</button>
+    </div>
+</div>
+<div class="container">
+    <div class="hangman-box">
+        <img src="#" draggable="false" alt="hangman-img">
+        <h1>Hangman Spill</h1>
+    </div>
+    <div id="box">
+            <table id="scoreboard"></table>
+    </div>
+    <div class="game-box">
+        <ul class="word-display"></ul>
+        <h4 class="hint-text">Hint: <b></b></h4>
+        <h4 class="guesses-text">Feil gjett: <b></b></h4>
+        <div class="keyboard"></div>
+    </div>
+</div>
+</body>
+</html>
