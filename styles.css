@@ -246,25 +246,58 @@ body {
     color: black;
 }
 
-table {
-    display: flex;
-    justify-content: center;
+#scoreboard {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td {
-    border: 1px solid white;
+#scoreboard td, #scoreboard th {
+    border: 1px solid #ddd;
     padding: 8px;
-    text-align: center;
-    border-radius: 1px;
 }
 
-tr:nth-child(even) {
+#scoreboard tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-th {
-    background-color: black;
+#scoreboard tr:hover {
+    background-color: #ddd;
+}
+
+#scoreboard th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
     color: white;
+}
+
+#player-name {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+
+#endre-navn{
+  background: #83C2D1;
+  border-radius: 999px;
+  box-shadow: #83C2D1 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-left: 80px;
 }

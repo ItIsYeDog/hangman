@@ -10,6 +10,13 @@ let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
 const extraChars = ['æ', 'ø', 'å'];
 
+const endreNavn = document.getElementById('endre-navn');
+
+endreNavn.addEventListener('click', () => {
+    localStorage.removeItem('playerName');
+    location.reload();
+});
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const playerNameInput = document.getElementById('player-name');
@@ -56,14 +63,22 @@ function addScore(points) {
 }
 
 function showScoreboard() {
+    const scoreboardTable = document.getElementById('scoreboard');
+    scoreboardTable.innerHTML = ''; // Clear the current scoreboard
+
+    // Sort the scoreboard in descending order and get the top 5 scores
     scoreboard.sort((a, b) => b.points - a.points);
-    const scoreboardElement = document.getElementById('scoreboard');
-    let scoreboardHtml = '<table><tr><th>Player</th><th>Score</th></tr>';
-    for (let i = 0; i < scoreboard.length; i++) {
-        scoreboardHtml += `<tr><td>${scoreboard[i].name}</td><td>${scoreboard[i].points}</td></tr>`;
-    }
-    scoreboardHtml += '</table>';
-    scoreboardElement.innerHTML = scoreboardHtml;
+    let topFiveScores = scoreboard.slice(0, 5);
+
+    // Generate the new scoreboard
+    topFiveScores.forEach((score, index) => {
+        let row = scoreboardTable.insertRow(index);
+        let nameCell = row.insertCell(0);
+        let scoreCell = row.insertCell(1);
+
+        nameCell.textContent = score.name;
+        scoreCell.textContent = score.points;
+    });
 }
 const resetGame = () => {
     correctLetters = [];
