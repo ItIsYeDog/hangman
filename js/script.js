@@ -64,13 +64,13 @@ function addScore(points) {
 
 function showScoreboard() {
     const scoreboardTable = document.getElementById('scoreboard');
-    scoreboardTable.innerHTML = ''; // Clear the current scoreboard
+    scoreboardTable.innerHTML = '';
 
-    // Sort the scoreboard in descending order and get the top 5 scores
+    
     scoreboard.sort((a, b) => b.points - a.points);
     let topFiveScores = scoreboard.slice(0, 5);
 
-    // Generate the new scoreboard
+    
     topFiveScores.forEach((score, index) => {
         let row = scoreboardTable.insertRow(index);
         let nameCell = row.insertCell(0);
